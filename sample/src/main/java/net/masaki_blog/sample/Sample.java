@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Sample {
 
@@ -21,17 +20,34 @@ public class Sample {
 //        return ret;
 //    }
 
-    public List<String> sample(List<String> list) {
+//    public List<String> sample(List<String> list) {
+//
+//        Collector<String, ?, List<String>> c = Collectors.toList();
+//
+//        return list.stream().map(new Function<String, String>() {
+//            @Override
+//            public String apply(String t) {
+//                return t + ":test";
+//            }
+//        }).collect(c);
+//
+//    }
 
-        Stream<String> s = list.stream().map(new Function<String, String>() {
+    public List<String> sample(List<String> list) {
+        return list.stream().map(this.convert()).collect(this.toList());
+    }
+
+    private Function<String, String> convert() {
+        return new Function<String, String>() {
             @Override
             public String apply(String t) {
                 return t + ":test";
             }
-        });
+        };
+    }
 
-        Collector<String, ?, List<String>> c = Collectors.toList();
-        return s.collect(c);
+    private Collector<String, ?, List<String>> toList() {
+        return Collectors.toList();
     }
 
 }

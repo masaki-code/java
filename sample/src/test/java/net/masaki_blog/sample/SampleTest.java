@@ -12,12 +12,9 @@ class SampleTest {
 
     @Test
     void test() {
-
         List<String> list = Arrays.asList("a", "b", "c");
         List<String> actual = new Sample().sample(list);
-
         List<String> expected = Arrays.asList("a:test", "b:test", "c:test");
-
         assertThat(actual, is(expected));
     }
 
