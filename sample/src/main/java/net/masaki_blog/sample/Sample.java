@@ -23,18 +23,15 @@ public class Sample {
 
     public List<String> sample(List<String> list) {
 
-        Stream<String> originStream = list.stream();
-        Function<String, String> mapper = new Function<String, String>() {
-
+        Stream<String> s = list.stream().map(new Function<String, String>() {
             @Override
             public String apply(String t) {
                 return t + ":test";
             }
-        };
+        });
 
-        Stream<String> mapedStream = originStream.map(mapper);
         Collector<String, ?, List<String>> c = Collectors.toList();
-        return mapedStream.collect(c);
+        return s.collect(c);
     }
 
 }
