@@ -7,47 +7,23 @@ import java.util.stream.Collectors;
 
 public class Sample {
 
+// 本当はこれで良い。
 //    public List<String> sample(List<String> list) {
 //        return list.stream().map(s -> s + ":test").collect(Collectors.toList());
 //    }
 
-//    public List<String> sample(List<String> list) {
-//
-//        List<String> ret = new ArrayList<>();
-//        for (String s : list) {
-//            ret.add(s + ":test");
-//        }
-//        return ret;
-//    }
-
-//    public List<String> sample(List<String> list) {
-//
-//        Collector<String, ?, List<String>> c = Collectors.toList();
-//
-//        return list.stream().map(new Function<String, String>() {
-//            @Override
-//            public String apply(String t) {
-//                return t + ":test";
-//            }
-//        }).collect(c);
-//
-//    }
-
+    /**
+     * java8のメソッド（stream api）は使えるが、java8の構文（ラムダ式など）は使えない状態でのメソッド
+     */
     public List<String> sample(List<String> list) {
-        return list.stream().map(this.convert()).collect(this.toList());
-    }
+        Collector<String, ?, List<String>> toList = Collectors.toList();
 
-    private Function<String, String> convert() {
-        return new Function<String, String>() {
+        return list.stream().map(new Function<String, String>() {
             @Override
-            public String apply(String t) {
-                return t + ":test";
+            public String apply(String s) {
+                return s + ":test";
             }
-        };
-    }
-
-    private Collector<String, ?, List<String>> toList() {
-        return Collectors.toList();
+        }).collect(toList);
     }
 
 }
