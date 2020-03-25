@@ -44,4 +44,21 @@ public class ValueObjectListAllSuccessTest {
         System.out.println(json);
     }
 
+    @Test
+    public void multiTypeTest() {
+
+        List<IValueObject> list = Arrays.asList(
+
+                new ValueObjectA("vo1"), new ValueObjectB("vo2"), new ValueObjectA("vo3")
+
+        );
+
+        Gson gson = new GsonBuilder()
+                .registerTypeAdapter(ValueObjectA.class, IValueObject.JSON_SERIALIZER)
+                .registerTypeAdapter(ValueObjectB.class, IValueObject.JSON_SERIALIZER)
+                .create();
+
+        String json = gson.toJson(list);
+        System.out.println(json);
+    }
 }
