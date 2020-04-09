@@ -2,7 +2,7 @@ package net.masaki_blog.atcoder.abc087_b;
 
 import java.util.Scanner;
 
-public class Main {
+public class Main5 {
 
     public static void main(String... args) {
         int x, a, b, c;
@@ -13,7 +13,7 @@ public class Main {
             x = sc.nextInt(); // = x
         }
 
-        System.out.println(new Main().count(x / 50, a, b, c));
+        System.out.println(new Main5().count(x / 50, a, b, c));
 
     }
 
@@ -36,14 +36,14 @@ public class Main {
     private int count(int x, int b_max, int c_max) {
 
         // x' = 2b +c
+
+        int limit = Math.min(x / 2, b_max);
+
         int count = 0;
-
-        int start = Math.max((x - c_max) / 2, 0);
-        int limit = Math.min((x / 2), b_max);
-
-        for (int b = start; b <= limit; b++) {
-            count++;
-
+        for (int b = 0; b <= limit; b++) {
+            if (x - 2 * b <= c_max) {
+                count++;
+            }
         }
 
         return count;
