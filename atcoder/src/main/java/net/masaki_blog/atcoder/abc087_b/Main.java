@@ -18,10 +18,6 @@ public class Main {
     }
 
     private int count(int x, int a_max, int b_max, int c_max) {
-        // x = 10a + 2b + c
-        // x' = 2b + c
-        // => x = 10a + x'
-
         int limit = Math.min(x / 10, a_max);
 
         int count = 0;
@@ -35,19 +31,35 @@ public class Main {
 
     private int count(int x, int b_max, int c_max) {
 
-        // x' = 2b +c
         int limit = Math.min(x / 2, b_max);
 
-        int count = 0;
-        for (int b = 0; b <= limit; b++) {
-
-            if (x - c_max <= 2 * b) {
-                count++;
-            }
+        if (x - c_max <= 0) {
+            return limit + 1;
 
         }
 
-        return count;
+        if (0 < x - c_max && x - c_max < 2 * limit) {
+            int count = 0;
+
+            for (int b = 0; b <= limit; b++) {
+
+                if (x - c_max <= 2 * b) {
+                    count++;
+                }
+
+            }
+
+            return count;
+
+        }
+
+        if (x - c_max == 2 * limit) {
+            return 1;
+        }
+
+        // x - c_max > 2 * limit
+        return 0;
+
     }
 
 }
