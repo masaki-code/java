@@ -31,7 +31,7 @@ public class Main {
     }
 
     private static int count(int x, int b_max, int c_max) {
-        return Math.min((x / 2), b_max) - Math.max((x - c_max) / 2, 0) + 1;
+        return (Math.min(x, 2 * b_max) - Math.max(x - c_max, 0) + 2) / 2;
     }
 
 }
