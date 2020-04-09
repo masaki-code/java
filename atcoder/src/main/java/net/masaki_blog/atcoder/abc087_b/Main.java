@@ -13,15 +13,18 @@ public class Main {
             x = sc.nextInt(); // = x
         }
 
-        System.out.println(execute(x / 50, a, b, c));
+        System.out.println(new Main().count(x / 50, a, b, c));
 
     }
 
-    private static int execute(int x, int a_max, int b_max, int c_max) {
+    private int count(int x, int a_max, int b_max, int c_max) {
+        // x = 10a + 2b + c
+        // x' = 2b + c
+        // => x = 10a + x'
+
         int limit = Math.min(x / 10, a_max);
 
         int count = 0;
-
         for (int a = 0; a <= limit; a++) {
             count += count(x - a * 10, b_max, c_max);
         }
@@ -30,8 +33,21 @@ public class Main {
 
     }
 
-    private static int count(int x, int b_max, int c_max) {
-        return (Math.min(x, 2 * b_max) - Math.max(x - c_max, 0) + 2) / 2;
+    private int count(int x, int b_max, int c_max) {
+
+        // x' = 2b +c
+        int limit = Math.min(x / 2, b_max);
+
+        int count = 0;
+        for (int b = 0; b <= limit; b++) {
+
+            if (x - c_max <= 2 * b) {
+                count++;
+            }
+
+        }
+
+        return count;
     }
 
 }
