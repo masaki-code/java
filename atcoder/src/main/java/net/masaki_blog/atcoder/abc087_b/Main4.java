@@ -2,6 +2,10 @@ package net.masaki_blog.atcoder.abc087_b;
 
 import java.util.Scanner;
 
+/**
+ * breakでループ抜けるんじゃなく、ループ変数で制御
+ *
+ */
 public class Main4 {
 
     public static void main(String... args) {

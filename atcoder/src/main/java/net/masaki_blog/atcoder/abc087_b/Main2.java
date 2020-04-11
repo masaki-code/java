@@ -2,6 +2,9 @@ package net.masaki_blog.atcoder.abc087_b;
 
 import java.util.Scanner;
 
+/**
+ * 最初の作成物
+ */
 public class Main2 {
 
     public static void main(String... args) {

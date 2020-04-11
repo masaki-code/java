@@ -2,6 +2,9 @@ package net.masaki_blog.atcoder.abc087_b;
 
 import java.util.Scanner;
 
+/**
+ * streamと処理を分離
+ */
 public class Main3 {
 
     public static void main(String... args) {

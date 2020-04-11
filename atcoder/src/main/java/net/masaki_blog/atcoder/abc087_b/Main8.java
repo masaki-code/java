@@ -2,7 +2,10 @@ package net.masaki_blog.atcoder.abc087_b;
 
 import java.util.Scanner;
 
-public class Main {
+/**
+ * 単純にreturnできないか検討中（途中）
+ */
+public class Main8 {
 
     public static void main(String... args) {
         int x, a, b, c;
@@ -13,7 +16,7 @@ public class Main {
             x = sc.nextInt(); // = x
         }
 
-        System.out.println(new Main().count(x / 50, a, b, c));
+        System.out.println(new Main8().count(x / 50, a, b, c));
 
     }
 
