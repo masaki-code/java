@@ -3,16 +3,19 @@ package net.masaki_blog.atcoder.abc087_b;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 
 public class Main {
 
     public static void main(String... args) throws NumberFormatException, IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println(count(
+        PrintWriter pw = new PrintWriter(System.out);
+        pw.println(count(
                 Integer.parseInt(br.readLine()),
                 Integer.parseInt(br.readLine()),
                 Integer.parseInt(br.readLine()),
                 Integer.parseInt(br.readLine())));
+        pw.flush();
     }
 
     static int count(int A, int B, int C, int x) {
