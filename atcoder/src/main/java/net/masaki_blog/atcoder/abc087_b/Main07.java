@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * 単純にreturnできないか検討中（途中）
  */
-public class Main7 {
+public class Main07 {
 
     public static void main(String... args) {
         int x, a, b, c;
@@ -16,7 +16,7 @@ public class Main7 {
             x = sc.nextInt(); // = x
         }
 
-        System.out.println(new Main7().count(x / 50, a, b, c));
+        System.out.println(new Main07().count(x / 50, a, b, c));
 
     }
 

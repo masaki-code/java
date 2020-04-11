@@ -6,7 +6,7 @@ import java.util.Scanner;
  * 条件式を少し調整
  *
  */
-public class Main6 {
+public class Main06 {
 
     public static void main(String... args) {
         int x, a, b, c;
@@ -17,7 +17,7 @@ public class Main6 {
             x = sc.nextInt(); // = x
         }
 
-        System.out.println(new Main6().count(x / 50, a, b, c));
+        System.out.println(new Main06().count(x / 50, a, b, c));
 
     }
 

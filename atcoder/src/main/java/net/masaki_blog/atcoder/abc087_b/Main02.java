@@ -5,11 +5,11 @@ import java.util.Scanner;
 /**
  * 最初の作成物
  */
-public class Main2 {
+public class Main02 {
 
     public static void main(String... args) {
         try (Scanner input = new Scanner(System.in)) {
-            System.out.println(new Main2().execute(input));
+            System.out.println(new Main02().execute(input));
         }
 
     }
