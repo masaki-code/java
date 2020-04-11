@@ -5,8 +5,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
-import java.util.Arrays;
-import java.util.Objects;
+import java.util.HashSet;
+import java.util.Random;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -21,6 +22,8 @@ public class DataMaker {
 
     private static final Path PATH = Paths.get(DIR, FILE_NAME);
 
+    private static final Random R = new Random();
+
     @BeforeAll
     static void clear() throws IOException {
         Files.deleteIfExists(PATH);
@@ -29,51 +32,53 @@ public class DataMaker {
     @Test
     void test() throws IOException {
 
-        Iterable<String> as = rangeClosed(0, 50);
-        Iterable<String> bs = rangeClosed(0, 50);
-        Iterable<String> cs = rangeClosed(0, 50);
+        int zeroNum = 30;
+        int nonZeroNum = 70;
 
-        for (String x : rangeOfX(0, 100)) {
-            loop(x, as, bs, cs);
-        }
+        Set<String> zeroSet = new HashSet<>();
+        Set<String> nonZeroSet = new HashSet<>();
 
-    }
+        int[] params = new int[5];
 
-    private void loop(String x, Iterable<String> as, Iterable<String> bs, Iterable<String> cs) throws IOException {
+        while (true) {
+            int a = random(0, 100, 1);
+            int b = random(0, 100, 1);
+            int c = random(0, 100, 1);
+            int x = random(0, 100, 1);
 
-        String[] params = new String[5];
-        params[3] = x;
+            int count = new Main().count(x, a, b, c);
 
-        int intX = Integer.parseInt(x);
-        for (String a : as) {
-            int intA = Integer.parseInt(a);
-            for (String b : bs) {
-                int intB = Integer.parseInt(b);
+            params[0] = a;
+            params[1] = b;
+            params[2] = c;
+            params[3] = x * 50;
+            params[4] = count;
 
-                for (String c : cs) {
-                    int intC = Integer.parseInt(c);
-                    int intR = new Main().count(intX, intA, intB, intC);
+            String line = IntStream.of(params).boxed().map(String::valueOf).collect(Collectors.joining(","));
 
-                    params[0] = a;
-                    params[1] = b;
-                    params[2] = c;
-                    params[4] = String.valueOf(intR);
-
-                    Files.write(PATH, Arrays
-                            .asList(String.join(",", params)), StandardOpenOption.CREATE, StandardOpenOption.APPEND);
-
+            if (count == 0) {
+                if (zeroSet.size() < zeroNum) {
+                    zeroSet.add(line);
+                }
+            } else {
+                if (nonZeroSet.size() < nonZeroNum) {
+                    nonZeroSet.add(line);
                 }
             }
+
+            if (zeroSet.size() == zeroNum && nonZeroSet.size() == nonZeroNum) {
+                break;
+            }
+
         }
 
+        Files.write(PATH, zeroSet, StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+        Files.write(PATH, nonZeroSet, StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+
     }
 
-    private Iterable<String> rangeOfX(int s, int e) {
-        return IntStream.rangeClosed(s, e).map(i -> i * 50).boxed().map(Objects::toString).collect(Collectors.toList());
-    }
-
-    private Iterable<String> rangeClosed(int s, int e) {
-        return IntStream.rangeClosed(s, e).boxed().map(Objects::toString).collect(Collectors.toList());
+    private int random(int min, int max, int multiple) {
+        return (R.nextInt(max - min) + min) * multiple;
     }
 
 }
