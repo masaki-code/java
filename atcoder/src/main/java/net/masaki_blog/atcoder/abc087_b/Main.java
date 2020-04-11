@@ -7,10 +7,10 @@ public class Main {
     public static void main(String... args) {
         int x, A, B, C;
         try (Scanner sc = new Scanner(System.in)) {
-            A = sc.nextInt(); // 500 * a
-            B = sc.nextInt(); // 100 * b
-            C = sc.nextInt(); // 50 * c
-            x = sc.nextInt(); // = x
+            A = sc.nextInt();
+            B = sc.nextInt();
+            C = sc.nextInt();
+            x = sc.nextInt();
         }
 
         System.out.println(new Main().count(x, A, B, C));
@@ -48,7 +48,6 @@ public class Main {
 
     private int combinationNum(int x, int _n1, int _n2) {
 
-        // n1 >= n2
         int n1 = Math.max(_n1, _n2);
         int n2 = Math.min(_n1, _n2);
 
