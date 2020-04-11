@@ -2,11 +2,15 @@ package net.masaki_blog.atcoder.abc087_b;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.*;
+import static org.junit.jupiter.params.provider.Arguments.*;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import net.masaki_blog.test.MainTestBase;
 
@@ -20,24 +24,20 @@ class MainTest extends MainTestBase {
     private static String outputExample_2 = "0";
     private static String outputExample_3 = "213";
 
-    @Test
-    void test_1() {
-        in.inputLines(inputExample_1);
+    @ParameterizedTest
+    @MethodSource("dataProvider")
+    void test(List<String> inputExample, String outputExample) {
+        in.inputLines(inputExample);
         Main.main("");
-        assertThat(out.readLine(), is(outputExample_1));
+        assertThat(out.readLine(), is(outputExample));
     }
 
-    @Test
-    void test_2() {
-        in.inputLines(inputExample_2);
-        Main.main("");
-        assertThat(out.readLine(), is(outputExample_2));
+    static List<Arguments> dataProvider() {
+        List<Arguments> pattern = new ArrayList<>();
+        pattern.add(arguments(inputExample_1, outputExample_1));
+        pattern.add(arguments(inputExample_2, outputExample_2));
+        pattern.add(arguments(inputExample_3, outputExample_3));
+        return pattern;
     }
 
-    @Test
-    void test_3() {
-        in.inputLines(inputExample_3);
-        Main.main("");
-        assertThat(out.readLine(), is(outputExample_3));
-    }
 }
