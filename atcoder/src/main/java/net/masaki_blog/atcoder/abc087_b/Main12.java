@@ -2,7 +2,10 @@ package net.masaki_blog.atcoder.abc087_b;
 
 import java.util.Scanner;
 
-public class Main {
+/**
+ * 変数やら何やら削ってみた
+ */
+public class Main12 {
 
     public static void main(String... args) {
         @SuppressWarnings("resource")
