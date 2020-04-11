@@ -20,12 +20,12 @@ public class StandardInputStream extends InputStream {
 
     };
 
-    public void inputLine(String line) {
+    public <T> void inputLine(T line) {
         stream.append(line).append(LINE_SEPARATOR);
     }
 
-    public void inputLines(Iterable<String> lines) {
-        for (String line : lines) {
+    public <T> void inputLines(Iterable<T> lines) {
+        for (T line : lines) {
             this.inputLine(line);
         }
     }

@@ -17,7 +17,7 @@ public class Main {
 
     }
 
-    private int count(int x, int a_max, int b_max, int c_max) {
+    int count(int x, int a_max, int b_max, int c_max) {
         int limit = Math.min(x / 10, a_max);
 
         int count = 0;
