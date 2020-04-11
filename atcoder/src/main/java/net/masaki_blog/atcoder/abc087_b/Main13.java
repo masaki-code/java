@@ -4,15 +4,15 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Main {
+/**
+ * BufferedReaderに変更（すごく速くなった）
+ */
+public class Main13 {
 
     public static void main(String... args) throws NumberFormatException, IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println(count(
-                Integer.parseInt(br.readLine()),
-                Integer.parseInt(br.readLine()),
-                Integer.parseInt(br.readLine()),
-                Integer.parseInt(br.readLine())));
+        System.out.println(count(Integer.parseInt(br.readLine()), Integer.parseInt(br.readLine()), Integer
+                .parseInt(br.readLine()), Integer.parseInt(br.readLine())));
     }
 
     static int count(int A, int B, int C, int x) {
