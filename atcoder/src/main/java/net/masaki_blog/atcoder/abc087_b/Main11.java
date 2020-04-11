@@ -2,7 +2,10 @@ package net.masaki_blog.atcoder.abc087_b;
 
 import java.util.Scanner;
 
-public class Main {
+/**
+ * 正規化のタイミング
+ */
+public class Main11 {
 
     public static void main(String... args) {
         int x, A, B, C;
@@ -13,7 +16,7 @@ public class Main {
             x = sc.nextInt(); // = x
         }
 
-        System.out.println(new Main().count(x, A, B, C));
+        System.out.println(new Main11().count(x, A, B, C));
 
     }
 

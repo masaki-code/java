@@ -44,14 +44,14 @@ public class DataMaker {
             int a = random(0, 100, 1);
             int b = random(0, 100, 1);
             int c = random(0, 100, 1);
-            int x = random(0, 100, 1);
+            int x = random(0, 100, 50);
 
             int count = new Main().count(x, a, b, c);
 
             params[0] = a;
             params[1] = b;
             params[2] = c;
-            params[3] = x * 50;
+            params[3] = x;
             params[4] = count;
 
             String line = IntStream.of(params).boxed().map(String::valueOf).collect(Collectors.joining(","));
