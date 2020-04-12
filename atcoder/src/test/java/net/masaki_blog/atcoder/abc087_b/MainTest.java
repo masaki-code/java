@@ -26,7 +26,7 @@ class MainTest extends MainTestBase {
 
     @ParameterizedTest
     @MethodSource("dataProvider")
-    void test(List<String> inputExample, String outputExample) {
+    void test(List<String> inputExample, String outputExample) throws Exception {
         in.inputLines(inputExample);
         Main.main("");
         assertThat(out.readLine(), is(outputExample));

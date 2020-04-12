@@ -51,7 +51,7 @@ public class DataMakerCheap2 {
                         params[3] = x.toString();
 
                         {
-                            params[4] = String.valueOf(new Main().count(x, a, b, c));
+                            params[4] = String.valueOf(Main.count(x, a, b, c));
                             List<String> line = Arrays.asList(String.join(",", params));
                             Files.write(PATH, line, StandardOpenOption.CREATE, StandardOpenOption.APPEND);
                         }

@@ -52,7 +52,7 @@ public class DataMakerCheap {
 
                 for (String c : cs) {
                     int intC = Integer.parseInt(c);
-                    int intR = new Main().count(intX, intA, intB, intC);
+                    int intR = Main.count(intX, intA, intB, intC);
 
                     params[0] = a;
                     params[1] = b;

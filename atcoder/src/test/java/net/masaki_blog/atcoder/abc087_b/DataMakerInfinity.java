@@ -14,7 +14,7 @@ import java.util.stream.IntStream;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-public class DataMaker {
+public class DataMakerInfinity {
 
     private static final String DIR = "src/test/resources/abc087_b";
 
@@ -32,8 +32,8 @@ public class DataMaker {
     @Test
     void test() throws IOException {
 
-        int zeroNum = 30;
-        int nonZeroNum = 70;
+        int zeroNum = 0;
+        int nonZeroNum = 200;
 
         Set<String> zeroSet = new HashSet<>();
         Set<String> nonZeroSet = new HashSet<>();
@@ -41,10 +41,10 @@ public class DataMaker {
         int[] params = new int[5];
 
         while (true) {
-            int a = random(0, 100, 1);
-            int b = random(0, 100, 1);
-            int c = random(0, 100, 1);
-            int x = random(0, 100, 50);
+            int a = 1000000;
+            int b = 1000000;
+            int c = 1000000;
+            int x = random(0, 400, 50);
 
             int count = new DataMakerBase().count(a, b, c, x);
 

@@ -12,7 +12,7 @@ class MainTestEx extends MainTestBase {
 
     @ParameterizedTest
     @CsvFileSource(resources = "/abc087_b/sample.txt")
-    void test(String a, String b, String c, String x, String expected) {
+    void test(String a, String b, String c, String x, String expected) throws Exception {
 
         in.inputLine(a);
         in.inputLine(b);
