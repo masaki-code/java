@@ -18,7 +18,7 @@ public class DataMakerInfinity {
 
     private static final String DIR = "src/test/resources/abc087_b";
 
-    private static final String FILE_NAME = "sample.txt";
+    private static final String FILE_NAME = "sampleInfinity.txt";
 
     private static final Path PATH = Paths.get(DIR, FILE_NAME);
 
