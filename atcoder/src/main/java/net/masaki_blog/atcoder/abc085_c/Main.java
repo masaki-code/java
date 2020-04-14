@@ -27,7 +27,18 @@ public class Main {
         int bill_05 = -1;
         int bill_01 = -1;
 
-        // TODO
+        for (int i = 0; i <= n; i++) {
+            for (int j = 0; j <= n - i; j++) {
+                int k = n - i - j;
+
+                if (i * 10_000 + j * 5_000 + k * 1_000 == y) {
+                    bill_10 = i;
+                    bill_05 = j;
+                    bill_01 = k;
+                    break;
+                }
+            }
+        }
 
         return bill_10 + " " + bill_05 + " " + bill_01;
 
