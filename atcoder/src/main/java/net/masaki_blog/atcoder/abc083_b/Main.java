@@ -26,13 +26,24 @@ public class Main {
     int execute() {
         int result = 0;
         for (int i = 1; i <= n; i++) {
-            checkRange(i, a, b);
+            result += checkRange(i, a, b);
         }
         return result;
     }
 
-    private static int checkRange(int i, int a, int b) {
-        return 0;
+    private static int checkRange(int n, int a, int b) {
+
+        String n5 = String.valueOf(100000 + n); // 1 padding
+
+        int n4 = n5.charAt(1) - 48; // n0000
+        int n3 = n5.charAt(2) - 48; // n000
+        int n2 = n5.charAt(3) - 48; // n00
+        int n1 = n5.charAt(4) - 48; // n0
+        int n0 = n5.charAt(5) - 48; // n
+
+        int sum = n4 + n3 + n2 + n1 + n0;
+
+        return (a <= sum && sum <= b) ? n : 0;
 
     }
 
