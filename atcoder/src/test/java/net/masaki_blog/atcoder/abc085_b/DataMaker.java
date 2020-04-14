@@ -1,8 +1,6 @@
 package net.masaki_blog.atcoder.abc085_b;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -14,7 +12,6 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import net.masaki_blog.test.DataMakerBase;
-import net.masaki_blog.test.StandardInputStream;
 
 public class DataMaker extends DataMakerBase {
 
@@ -47,13 +44,12 @@ public class DataMaker extends DataMakerBase {
                 di[i] = random(1, 100, 1);
             }
 
-            StandardInputStream in = StandardInputStream.get();
             in.inputLine(n);
             in.inputLines(di);
 
-            System.setIn(in);
-            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-            int ret = new Main(br).execute();
+            Main.main("");
+
+            int ret = Integer.parseInt(out.readLine());
 
             params[0] = n;
             params[1] = join(di, "CR");
