@@ -1,2 +1,2 @@
-src/test/resources/abc087_b/sample*.txt
+src/test/resources/*/sample*.txt
 
