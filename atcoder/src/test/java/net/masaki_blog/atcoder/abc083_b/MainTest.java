@@ -9,6 +9,7 @@ import java.util.List;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import net.masaki_blog.test.MainTestBase;
@@ -30,4 +31,13 @@ class MainTest extends MainTestBase {
         pattern.add(arguments("100 4 16", "4554"));
         return pattern;
     }
+
+    @ParameterizedTest
+    @CsvFileSource(resources = "/abc083_b/sample.txt")
+    void testTxt(String input, String expected) throws Exception {
+        in.inputLine(input);
+        Main.main("");
+        assertThat(out.readLine(), is(expected));
+    }
+
 }

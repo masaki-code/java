@@ -4,19 +4,22 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 
-public class Main {
+/**
+ * 最初の作成バージョン
+ */
+public class Main_1 {
 
     public static void main(String... args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         PrintWriter pw = new PrintWriter(System.out);
-        pw.println(new Main(br).execute());
+        pw.println(new Main_1(br).execute());
         pw.flush();
 
     }
 
     private final int n, a, b;
 
-    Main(BufferedReader br) throws Exception {
+    Main_1(BufferedReader br) throws Exception {
         String[] s = br.readLine().split(" ");
         this.n = Integer.parseInt(s[0]);
         this.a = Integer.parseInt(s[1]);
@@ -31,9 +34,9 @@ public class Main {
         return result;
     }
 
-    private static int checkRange(int i, int a, int b) {
+    private static int checkRange(int n, int a, int b) {
 
-        String n5 = String.valueOf(100000 + i); // 1 padding
+        String n5 = String.valueOf(100000 + n); // 1 padding
 
         int n4 = n5.charAt(1) - 48; // n0000
         int n3 = n5.charAt(2) - 48; // n000
@@ -43,7 +46,7 @@ public class Main {
 
         int sum = n4 + n3 + n2 + n1 + n0;
 
-        return (a <= sum && sum <= b) ? i : 0;
+        return (a <= sum && sum <= b) ? n : 0;
 
     }
 
