@@ -5,12 +5,15 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.Arrays;
 
-public class Main {
+/**
+ * splitをメソッドに
+ */
+public class Main_04 {
 
     public static void main(String... args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         PrintWriter pw = new PrintWriter(System.out);
-        pw.println(new Main(br).execute());
+        pw.println(new Main_04(br).execute());
         pw.flush();
 
     }
@@ -18,7 +21,7 @@ public class Main {
     int n;
     String a;
 
-    Main(BufferedReader br) throws Exception {
+    Main_04(BufferedReader br) throws Exception {
         this.n = Integer.parseInt(br.readLine());
         this.a = br.readLine();
     }
