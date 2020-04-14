@@ -33,15 +33,15 @@ public class Main {
 
     private static int checkRange(int i, int a, int b) {
 
-        String n5 = String.valueOf(100000 + i); // 1 padding
+        int sum = 0;
 
-        int n4 = n5.charAt(1) - 48; // n0000
-        int n3 = n5.charAt(2) - 48; // n000
-        int n2 = n5.charAt(3) - 48; // n00
-        int n1 = n5.charAt(4) - 48; // n0
-        int n0 = n5.charAt(5) - 48; // n
-
-        int sum = n4 + n3 + n2 + n1 + n0;
+        int n = i;
+        while (true) {
+            sum += n % 10;
+            if ((n = n / 10) == 0) {
+                break;
+            }
+        }
 
         return (a <= sum && sum <= b) ? i : 0;
 
