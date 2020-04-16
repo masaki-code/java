@@ -30,6 +30,18 @@ public class StandardInputStream extends InputStream {
         }
     }
 
+    public <T> void inputLines(T[] lines) {
+        for (T line : lines) {
+            this.inputLine(line);
+        }
+    }
+
+    public void inputLines(int[] lines) {
+        for (int line : lines) {
+            this.inputLine(line);
+        }
+    }
+
     @Override
     public int read() throws IOException {
         if (stream.length() == 0) {
