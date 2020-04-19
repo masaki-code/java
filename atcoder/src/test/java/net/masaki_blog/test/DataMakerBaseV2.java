@@ -12,10 +12,11 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
 public abstract class DataMakerBaseV2 {
+
+    protected static final String DIR = "src/test/resources";
 
     private static final InputStream SYSTEM_IN = System.in;
     private static final PrintStream SYSTEM_OUT = System.out;
@@ -37,7 +38,7 @@ public abstract class DataMakerBaseV2 {
         System.setOut(SYSTEM_OUT);
     }
 
-    @BeforeAll
+    @BeforeEach
     public void clear() throws IOException {
         Files.deleteIfExists(path());
     }
