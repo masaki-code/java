@@ -2,8 +2,6 @@ package net.masaki_blog.atcoder.practice.own;
 
 import org.junit.jupiter.api.Test;
 
-import net.masaki_blog.atcoder.practice.own.Main;
-
 class MainTest {
 
     @Test
