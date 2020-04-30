@@ -1,4 +1,4 @@
-package net.masaki_blog.gson.base;
+package net.masaki_blog.gson.base.builder;
 
 import java.util.Arrays;
 import java.util.LinkedHashMap;

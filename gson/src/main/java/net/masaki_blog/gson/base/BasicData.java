@@ -27,7 +27,7 @@ public class BasicData {
 
     @Test
     public void test_Integer() {
-        Integer data = 100;
+        Integer data = 200;
         String json = new Gson().toJson(data);
         System.out.println(json);
     }
@@ -41,7 +41,7 @@ public class BasicData {
 
     @Test
     public void test_list() {
-        List<Object> data = Arrays.asList("a", "b");
+        List<Object> data = Arrays.asList("a", "1", 1);
         String json = new Gson().toJson(data);
         System.out.println(json);
     }
@@ -50,7 +50,7 @@ public class BasicData {
     public void test_map() {
         Map<String, Object> data = new HashMap<>();
         data.put("a", "hoge");
-        data.put("b", "fuga");
+        data.put("b", "100");
         data.put("c", 100);
         data.put("d", null);
         String json = new Gson().toJson(data);

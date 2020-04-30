@@ -1,29 +1,20 @@
-package net.masaki_blog.gson.base;
+package net.masaki_blog.gson.base.builder;
+
+import java.lang.reflect.Modifier;
 
 import org.junit.Test;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-public class DisableInnerClassSerialization {
+public class ExcludeFieldsWithModifiers {
 
     public static class Sample {
 
-        InnerStaticClass a = new InnerStaticClass();
+        String a = "hoge";
 
-        InnerNonStaticClass b = new InnerNonStaticClass();
-
-        static class InnerStaticClass {
-
-            String c = "hoge";
-
-        }
-
-        class InnerNonStaticClass {
-
-            String d = "hoge";
-
-        }
+        @SuppressWarnings("unused")
+        private String b = "fuga";
 
     }
 
@@ -37,7 +28,7 @@ public class DisableInnerClassSerialization {
 
     @Test
     public void test_2() {
-        Gson gson = new GsonBuilder().disableInnerClassSerialization().create();
+        Gson gson = new GsonBuilder().excludeFieldsWithModifiers(Modifier.PRIVATE).create();
         Object data = new Sample();
         String json = gson.toJson(data);
         System.out.println(json);

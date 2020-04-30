@@ -1,20 +1,29 @@
-package net.masaki_blog.gson.base;
-
-import java.lang.reflect.Modifier;
+package net.masaki_blog.gson.base.builder;
 
 import org.junit.Test;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-public class ExcludeFieldsWithModifiers {
+public class DisableInnerClassSerialization {
 
     public static class Sample {
 
-        String a = "hoge";
+        InnerStaticClass a = new InnerStaticClass();
 
-        @SuppressWarnings("unused")
-        private String b = "fuga";
+        InnerNonStaticClass b = new InnerNonStaticClass();
+
+        static class InnerStaticClass {
+
+            String c = "hoge";
+
+        }
+
+        class InnerNonStaticClass {
+
+            String d = "hoge";
+
+        }
 
     }
 
@@ -28,7 +37,7 @@ public class ExcludeFieldsWithModifiers {
 
     @Test
     public void test_2() {
-        Gson gson = new GsonBuilder().excludeFieldsWithModifiers(Modifier.PRIVATE).create();
+        Gson gson = new GsonBuilder().disableInnerClassSerialization().create();
         Object data = new Sample();
         String json = gson.toJson(data);
         System.out.println(json);
