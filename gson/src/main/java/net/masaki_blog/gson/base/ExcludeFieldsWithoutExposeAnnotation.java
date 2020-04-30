@@ -1,4 +1,4 @@
-package net.masaki_blog.gson.base.expose;
+package net.masaki_blog.gson.base;
 
 import java.util.Arrays;
 import java.util.LinkedHashMap;
@@ -26,7 +26,7 @@ public class ExcludeFieldsWithoutExposeAnnotation {
         Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
         Object data = new Sample_1();
         String json = gson.toJson(data);
-        System.out.println("Sample_1 : " + json);
+        System.out.println(json);
     }
 
     public static class Sample_2 {
@@ -44,7 +44,7 @@ public class ExcludeFieldsWithoutExposeAnnotation {
 
         Object data = new Sample_2();
         String json = gson.toJson(data);
-        System.out.println("Sample_2 : " + json);
+        System.out.println(json);
     }
 
     public static class Sample_3 {
@@ -61,7 +61,7 @@ public class ExcludeFieldsWithoutExposeAnnotation {
         Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
         Object data = new Sample_3();
         String json = gson.toJson(data);
-        System.out.println("Sample_3 : " + json);
+        System.out.println(json);
     }
 
     public static class Sample_4 {
@@ -82,7 +82,7 @@ public class ExcludeFieldsWithoutExposeAnnotation {
         Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
         Object data = new Sample_4();
         String json = gson.toJson(data);
-        System.out.println("Sample_4 : " + json);
+        System.out.println(json);
     }
 
 }

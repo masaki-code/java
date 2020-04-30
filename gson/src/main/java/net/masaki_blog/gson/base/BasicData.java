@@ -15,35 +15,35 @@ public class BasicData {
     public void test_String() {
         String data = "test";
         String json = new Gson().toJson(data);
-        System.out.println("test_String       : " + json);
+        System.out.println(json);
     }
 
     @Test
     public void test_int() {
         int data = 100;
         String json = new Gson().toJson(data);
-        System.out.println("test_int          : " + json);
+        System.out.println(json);
     }
 
     @Test
     public void test_Integer() {
         Integer data = 100;
         String json = new Gson().toJson(data);
-        System.out.println("test_Integer      : " + json);
+        System.out.println(json);
     }
 
     @Test
     public void test_Integer_null() {
         Integer data = null;
         String json = new Gson().toJson(data);
-        System.out.println("test_Integer_null : " + json);
+        System.out.println(json);
     }
 
     @Test
     public void test_list() {
         List<Object> data = Arrays.asList("a", "b");
         String json = new Gson().toJson(data);
-        System.out.println("test_list         : " + json);
+        System.out.println(json);
     }
 
     @Test
@@ -54,7 +54,7 @@ public class BasicData {
         data.put("c", 100);
         data.put("d", null);
         String json = new Gson().toJson(data);
-        System.out.println("test_map          : " + json);
+        System.out.println(json);
     }
 
 }

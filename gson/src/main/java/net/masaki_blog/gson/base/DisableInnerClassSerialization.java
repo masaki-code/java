@@ -32,7 +32,7 @@ public class DisableInnerClassSerialization {
         Gson gson = new Gson();
         Object data = new Sample();
         String json = gson.toJson(data);
-        System.out.println("test_1 : " + json);
+        System.out.println(json);
     }
 
     @Test
@@ -40,7 +40,7 @@ public class DisableInnerClassSerialization {
         Gson gson = new GsonBuilder().disableInnerClassSerialization().create();
         Object data = new Sample();
         String json = gson.toJson(data);
-        System.out.println("test_2 : " + json);
+        System.out.println(json);
     }
 
 }

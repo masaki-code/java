@@ -23,7 +23,7 @@ public class ExcludeFieldsWithModifiers {
         Gson gson = new Gson();
         Object data = new Sample();
         String json = gson.toJson(data);
-        System.out.println("test_1 : " + json);
+        System.out.println(json);
     }
 
     @Test
@@ -31,7 +31,7 @@ public class ExcludeFieldsWithModifiers {
         Gson gson = new GsonBuilder().excludeFieldsWithModifiers(Modifier.PRIVATE).create();
         Object data = new Sample();
         String json = gson.toJson(data);
-        System.out.println("test_2 : " + json);
+        System.out.println(json);
     }
 
 }

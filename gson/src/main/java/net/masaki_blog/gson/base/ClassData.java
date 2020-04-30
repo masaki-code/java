@@ -24,7 +24,7 @@ public class ClassData {
         Gson gson = new Gson();
         Object data = new Sample_1();
         String json = gson.toJson(data);
-        System.out.println("Sample_1 : " + json);
+        System.out.println(json);
     }
 
     public static class Sample_2 {
@@ -40,7 +40,7 @@ public class ClassData {
         Gson gson = new Gson();
         Object data = new Sample_2();
         String json = gson.toJson(data);
-        System.out.println("Sample_2 : " + json);
+        System.out.println(json);
     }
 
     public static class Sample_3 {
@@ -56,7 +56,7 @@ public class ClassData {
         Gson gson = new Gson();
         Object data = new Sample_3();
         String json = gson.toJson(data);
-        System.out.println("Sample_3 : " + json);
+        System.out.println(json);
     }
 
     public static class Sample_4 {
@@ -76,7 +76,7 @@ public class ClassData {
         Gson gson = new Gson();
         Object data = new Sample_4();
         String json = gson.toJson(data);
-        System.out.println("Sample_4 : " + json);
+        System.out.println(json);
     }
 
 }

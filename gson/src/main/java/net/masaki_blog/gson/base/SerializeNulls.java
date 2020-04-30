@@ -20,14 +20,14 @@ public class SerializeNulls {
     public void test_1() {
         Gson gson = new Gson();
         String json = gson.toJson(a);
-        System.out.println("test_1 : " + json);
+        System.out.println(json);
     }
 
     @Test
     public void test_2() {
         Gson gson = new GsonBuilder().serializeNulls().create();
         String json = gson.toJson(a);
-        System.out.println("test_2 : " + json);
+        System.out.println(json);
     }
 
 }
