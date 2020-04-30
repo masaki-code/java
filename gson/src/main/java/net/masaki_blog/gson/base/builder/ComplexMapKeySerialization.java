@@ -10,8 +10,8 @@ import com.google.gson.GsonBuilder;
 
 public class ComplexMapKeySerialization {
 
-    private static class Key {
-
+    static class Key {
+        String a = "b";
     }
 
     Map<Object, String> a = new LinkedHashMap<>();

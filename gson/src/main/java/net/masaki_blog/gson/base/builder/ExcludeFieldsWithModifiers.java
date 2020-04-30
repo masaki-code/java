@@ -7,13 +7,13 @@ import org.junit.Test;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+@SuppressWarnings("unused")
 public class ExcludeFieldsWithModifiers {
 
     public static class Sample {
 
         String a = "hoge";
 
-        @SuppressWarnings("unused")
         private String b = "fuga";
 
     }
